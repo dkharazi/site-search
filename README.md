@@ -62,7 +62,7 @@ For any additional information about downloading Docker, read the detailed steps
 
 ```sh
 $ ###
-$ ### COMMANDS FOR INSTALLING DOCKER
+$ ### COMMANDS FOR RUNNING TYPESENSE SERVICE
 $ ###
 $ 
 $ # 1. Update all existing packages on the e2-instance
