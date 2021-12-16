@@ -90,7 +90,9 @@ $ ###
 $ ### OTHER USEFUL COMMANDS
 $ ###
 $
-$ # Verify search engine is running in docker container and see which port it is running on
+$ # Verify search engine service is running in docker container
+$ sudo docker ps
+$ # Verify which port docker container is running on
 $ sudo netstat -nlp | grep 8108
 ```
 
