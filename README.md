@@ -58,7 +58,11 @@ For any additional information about downloading Docker, read the detailed steps
 2. Install Node.js and npm
 3. Verify the installation by printing the installed Node.js version
 4. Create directory for Typesense search service
-5. Run search service as Typesense container
+5. Run search service as Typesense container in daemon mode, while directing output to log file
+6. Create shell script `purge-logs.sh` for purging logs to save space
+   - Copy contents from `purge-logs.sh` in repo to this file
+7. Open crontab
+8. Schedule shell script for purging log file in crontab at 2AM every day
 
 ```sh
 $ ###
@@ -72,9 +76,15 @@ $ sudo apt install nodejs npm
 $ # 3. Verify the installation
 $ sudo nodejs --version
 $ # 4. Create directory for Typesense search service
-$ mkdir /tmp/typesense-server-data
+$ mkdir /home/dkharazif/typesense-server-data
 $ # 5. Run search service as Typesense container
-$ docker run -i -p 8108:8108 -v/tmp/typesense-server-data/:/data typesense/typesense:0.15.0 --data-dir /data --api-key=xyz --listen-port 8108 --enable-cors
+$ sudo nohup docker run -i -p 8108:8108 -v/home/dkharazif/typesense-server-data/:/data typesense/typesense:0.15.0 --data-dir /data --api-key=xyz --listen-port 8108 --enable-cors > typesense-server-data.log &
+$ # 6. Create shell script for purging logs
+$ touch purge-logs.sh
+$ # 7. Open crontab
+$ crontab -e
+$ # 8. Schedule shell script at 2AM every day
+$ 0 2 * * * sh /home/dkharazif/typesense-server-data/purge-logs.sh
 ```
 
 For any additional information about downloading `npm` on an Ubuntu system, read the walkthrough outlined in [this article](https://linuxize.com/post/how-to-install-node-js-on-ubuntu-20-04/). For additional steps about installing Gatsby-related packages and/or Typesense in an Ubuntu environment, please refer to [this article](https://medium.com/swlh/building-a-search-bar-for-your-gatsbyjs-site-with-typesense-3e277dc33942).
