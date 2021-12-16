@@ -52,7 +52,7 @@ $ sudo docker ps
 ```
 For any additional information about downloading Docker, read the detailed steps and overview found in [this article](https://medium.com/swlh/building-a-search-bar-for-your-gatsbyjs-site-with-typesense-3e277dc33942). For more recent, up-to-date information about downloading Docker on Ubuntu machines, please refer to the [official Docker installation docs](https://docs.docker.com/engine/install/ubuntu/).
 
-# Install the Typesense plugin on an Ubuntu E2-Instance
+# Run Typesense Service on an Ubuntu E2-Instance
 
 1. Update all existing packages on the e2-instance
 2. Install Node.js and npm
