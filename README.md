@@ -20,12 +20,20 @@ To create and host a search engine on GCP for a website hosted on Github Pages, 
 6. Install Docker CE
 
 ```sh
+$ ###
+$ ### COMMANDS FOR INSTALLING DOCKER
+$ ###
+$ 
 $ sudo apt update
 $ sudo apt install apt-transport-https ca-certificates curl software-properties-common
 $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 $ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
 $ apt-cache policy docker-ce
 $ sudo apt install docker-ce
+$
+$ ###
+$ ### OTHER USEFUL COMMANDS
+$ ###
 $
 $ # Print if docker service is running
 $ sudo systemctl status docker
