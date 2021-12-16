@@ -12,8 +12,27 @@ To create and host a search engine on GCP for a website hosted on Github Pages, 
 
 # Installing Docker on an Ubuntu E2-Instance
 
-1. Update all packages
+1. Update all existing packages on the e2-instance
+2. Install pre-requisite packages for letting `apt` use packages over HTTPS
+3. Add the GPG key for the official Docker repository to the system
+4. Add the Docker repository to `apt` resources
+5. Ensure the installation comes from the official Docker repo, rather than the default Ubuntu repo
+6. Install Docker CE
 
 ```sh
 $ sudo apt update
+$ sudo apt install apt-transport-https ca-certificates curl software-properties-common
+$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+$ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+$ apt-cache policy docker-ce
+$ sudo apt install docker-ce
+$
+$ # Print if docker service is running
+$ sudo systemctl status docker
+$ # Stop docker service
+$ sudo service docker stop
+$ # Start docker service
+$ sudo service docker start
+$ # Print list of running containers
+$ sudo docker ps
 ```
