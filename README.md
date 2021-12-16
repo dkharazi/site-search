@@ -85,6 +85,13 @@ $ # 7. Open crontab
 $ crontab -e
 $ # 8. Schedule shell script at 2AM every day
 $ 0 2 * * * sh /home/dkharazif/typesense-server-data/purge-logs.sh
+
+$ ###
+$ ### OTHER USEFUL COMMANDS
+$ ###
+$
+$ # Verify search engine is running in docker container and see which port it is running on
+$ sudo netstat -nlp | grep 8108
 ```
 
 For any additional information about downloading `npm` on an Ubuntu system, read the walkthrough outlined in [this article](https://linuxize.com/post/how-to-install-node-js-on-ubuntu-20-04/). For additional steps about installing Gatsby-related packages and/or Typesense in an Ubuntu environment, please refer to [this article](https://medium.com/swlh/building-a-search-bar-for-your-gatsbyjs-site-with-typesense-3e277dc33942).
