@@ -50,3 +50,8 @@ $ sudo service docker start
 $ # Print list of running containers
 $ sudo docker ps
 ```
+For any additional details, read steps found in [this article](https://medium.com/swlh/building-a-search-bar-for-your-gatsbyjs-site-with-typesense-3e277dc33942). For more recent, up-to-date information about downloading Docker on Ubuntu machines, please refer to the [official Docker installation docs](https://docs.docker.com/engine/install/ubuntu/).
+
+# Install the Typesense plugin on an Ubuntu E2-Instance
+
+Hello world
