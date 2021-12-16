@@ -24,11 +24,17 @@ $ ###
 $ ### COMMANDS FOR INSTALLING DOCKER
 $ ###
 $ 
+$ # 1. Update all existing packages on the e2-instance
 $ sudo apt update
+$ # 2. Install pre-requisite packages
 $ sudo apt install apt-transport-https ca-certificates curl software-properties-common
+$ # 3. Add the GPG key to the system
 $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+$ # 4. Add the Docker repository to `apt` resources
 $ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+$ # 5. Ensure the installation comes from the official Docker repo
 $ apt-cache policy docker-ce
+$ # 6. Install Docker CE
 $ sudo apt install docker-ce
 $
 $ ###
