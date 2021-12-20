@@ -76,7 +76,7 @@ $ sudo apt install nodejs npm
 $ # 3. Verify the installation
 $ sudo nodejs --version
 $ # 4. Create directory for Typesense search service
-$ mkdir /home/dkharazif/typesense-server-data
+$ mkdir /home/dkharazif/typesense-server-data ; cd /home/dkharazif/typesense-server-data
 $ # 5. Run search service as Typesense container
 $ sudo nohup docker run -i -p 8108:8108 -v/home/dkharazif/typesense-server-data/:/data typesense/typesense:0.15.0 --data-dir /data --api-key=xyz --listen-port 8108 --enable-cors > typesense-server-data.log &
 $ # 6. Create shell script for purging logs
